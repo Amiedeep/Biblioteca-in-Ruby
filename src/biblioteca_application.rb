@@ -1,8 +1,10 @@
+require_relative 'display'
+
 class BibliotecaApplication
 
-  def initialize(welcome_message = "Welcome to biblioteca")
-    @welcome_message = welcome_message
-    @books = ['the pragmattic programmer', 'clean code']
+  def initialize welcome_display, books_display
+    @welcome_display = welcome_display
+    @books_display = books_display
   end
 
   def start_application
@@ -12,13 +14,14 @@ class BibliotecaApplication
 
   private
   def print_welcome_message
-    puts @welcome_message
+    @welcome_display.print_on_console
   end
 
   def print_books
-    puts "Available books are : \n"
-    puts @books
+    @books_display.print_on_console
   end
 
-  BibliotecaApplication.new.start_application
+  welcome_display = Display.new "Welcome to biblioteca"
+  books_display = Display.new "Available books are : \nthe pragmattic programmer\nclean code"
+  BibliotecaApplication.new(welcome_display, books_display).start_application
 end
