@@ -1,4 +1,5 @@
 require_relative 'display'
+require_relative 'book'
 
 class BibliotecaApplication
 
@@ -22,6 +23,8 @@ class BibliotecaApplication
   end
 
   welcome_display = Display.new "Welcome to biblioteca"
-  books_display = Display.new "Available books are : \nthe pragmattic programmer\nclean code"
+  books_headers = "Available books are : \n" + "%-50s %-50s" % ["Name", "Author"] + "Year of Publication"
+  available_books = [Book.new("the pragmattic programmer", "Me", 2010), Book.new("Clean code", "Me", 2011)]
+  books_display = Display.new(books_headers + available_books.each{ |book| book.to_str }.join)
   BibliotecaApplication.new(welcome_display, books_display).start_application
 end
