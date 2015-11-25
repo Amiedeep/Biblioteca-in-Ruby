@@ -1,11 +1,12 @@
 require_relative 'display'
 require_relative 'book'
+require_relative 'library'
 
 class BibliotecaApplication
 
-  def initialize welcome_display, books_display
+  def initialize welcome_display, library
     @welcome_display = welcome_display
-    @books_display = books_display
+    @library = library
   end
 
   def start_application
@@ -19,12 +20,12 @@ class BibliotecaApplication
   end
 
   def print_books
-    @books_display.print_on_console
+    books = @library.list_books
+    Display.new(books).print_on_console
   end
 
   welcome_display = Display.new "Welcome to biblioteca"
-  books_headers = "Available books are : \n" + "%-50s %-50s" % ["Name", "Author"] + "Year of Publication"
   available_books = [Book.new("the pragmattic programmer", "Me", 2010), Book.new("Clean code", "Me", 2011)]
-  books_display = Display.new(books_headers + available_books.each{ |book| book.to_str }.join)
-  BibliotecaApplication.new(welcome_display, books_display).start_application
+  library = Library.new(available_books)
+  BibliotecaApplication.new(welcome_display, library).start_application
 end
