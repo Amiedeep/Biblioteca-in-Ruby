@@ -10,4 +10,14 @@ describe "Display" do
       display.print_on_console
     end
   end
+
+  describe "#read_input" do
+
+    it 'should read input from the console' do
+      display = Display.new
+      $stdin = StringIO.new("some input")
+      expect(display.read_input).to eq("some input")
+      $stdin = STDIN
+    end
+  end
 end
