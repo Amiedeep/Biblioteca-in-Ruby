@@ -4,9 +4,9 @@ class Interpreter
     @library = library
   end
 
-  def interpret option, system_exit = SystemExit
+  def interpret option, kernel = Kernel
     if option != "1"
-      system_exit.exit(0)
+      kernel.exit(0)
     end
     @library.list_books
   end

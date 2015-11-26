@@ -7,7 +7,7 @@ describe "Interpreter" do
     before(:each) {
       @library = double("Library")
       @interpreter = Interpreter.new @library
-      @system_exit = double("SystemExit")
+      @kernel = double("Kernel")
     }
 
     context 'when it gets 1 as parameter' do
@@ -22,10 +22,10 @@ describe "Interpreter" do
     context 'when it gets invalid option as parameter' do
 
       it 'should exit the system' do
-        expect(@system_exit).to receive("exit").with(0)
+        expect(@kernel).to receive("exit").with(0)
         allow(@library).to receive("list_books")
 
-        @interpreter.interpret('29', @system_exit)
+        @interpreter.interpret('29', @kernel)
       end
     end
   end
