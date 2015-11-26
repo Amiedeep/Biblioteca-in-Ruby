@@ -7,20 +7,25 @@ describe "Interpreter" do
     before(:each) {
       @library = double("Library")
       @interpreter = Interpreter.new @library
+      @system_exit = double("SystemExit")
     }
 
-    context "when it gets 1 as parameter" do
+    context 'when it gets 1 as parameter' do
 
       it 'should call library for books' do
         expect(@library).to receive("list_books")
-        @interpreter.interpret("1")
+
+        @interpreter.interpret('1')
       end
     end
 
-    context "when it gets invalid option as parameter" do
+    context 'when it gets invalid option as parameter' do
 
       it 'should exit the system' do
-        expect(@interpreter.interpret("29")).to raise(SystemExit)
+        expect(@system_exit).to receive("exit").with(0)
+        allow(@library).to receive("list_books")
+
+        @interpreter.interpret('29', @system_exit)
       end
     end
   end
