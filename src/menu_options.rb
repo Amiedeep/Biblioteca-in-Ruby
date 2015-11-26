@@ -5,6 +5,6 @@ class MenuOptions
   end
 
   def get_options
-      "Available options are\n1: " + @menu_option + "\n"
+      "\nPlease select a option\n1: " + @menu_option + "\n"
   end
 end
