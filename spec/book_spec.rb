@@ -1,4 +1,5 @@
 require './src/book'
+
 describe "Book" do
 
   describe "#to_str" do

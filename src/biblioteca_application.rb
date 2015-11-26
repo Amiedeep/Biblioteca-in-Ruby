@@ -24,8 +24,10 @@ class BibliotecaApplication
     Display.new(books).print_on_console
   end
 
-  welcome_display = Display.new "Welcome to biblioteca"
-  available_books = [Book.new("the pragmattic programmer", "Me", 2010), Book.new("Clean code", "Me", 2011)]
-  library = Library.new(available_books)
-  BibliotecaApplication.new(welcome_display, library).start_application
+  def self.start
+    welcome_display = Display.new 'Welcome to biblioteca'
+    available_books = [Book.new("the pragmattic programmer", "Me", 2010), Book.new("Clean code", "Me", 2011)]
+    library = Library.new(available_books)
+    BibliotecaApplication.new(welcome_display, library).start_application
+  end
 end
