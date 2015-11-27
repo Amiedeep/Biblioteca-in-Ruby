@@ -8,7 +8,7 @@ describe "Library" do
       book1 = double("Book")
       book2 = double("Book")
       library = Library.new([book1, book2])
-      expected_headers = "\nAvailable books are : \n" + "%-50s %-50s" % ["Name", "Author"] + "Year of Publication"
+      expected_headers = "\nAvailable books are : \n" + "%-50s %-50s" % ["Name", "Author"] + "Year of Publication\n" + "-"*120
 
       allow(book1).to receive("to_str").and_return "book1"
       allow(book2).to receive("to_str").and_return "book2"
