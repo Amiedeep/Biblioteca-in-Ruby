@@ -15,7 +15,7 @@ class BibliotecaApplication
 
   def start_application
     print_welcome_message
-    take_input_and_inperpret
+    take_input_and_interpret
   end
 
   private
@@ -23,7 +23,7 @@ class BibliotecaApplication
     @welcome_display.print_on_console
   end
 
-  def take_input_and_inperpret
+  def take_input_and_interpret
     while true
       @options_display.print_on_console
       user_input = @console.read_input
