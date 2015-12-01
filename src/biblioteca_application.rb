@@ -27,8 +27,8 @@ class BibliotecaApplication
     while true
       @options_display.print_on_console
       user_input = @console.read_input
-      result = @interpreter.interpret user_input.chomp
-      Display.new(result).print_on_console
+      operation = @interpreter.interpret user_input.chomp
+      operation.execute
     end
   end
 

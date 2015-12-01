@@ -1,3 +1,7 @@
+require './src/operations/list_books_operation'
+require './src/operations/quit_operation'
+require './src/operations/invalid_option_operation'
+
 class Interpreter
 
   def initialize library
@@ -5,9 +9,13 @@ class Interpreter
   end
 
   def interpret option
-    if option != "1"
-      return 'Select a valid option!'
+    case option
+    when '1'
+        ListBooksOperation.new(@library)
+    when 'q'
+        QuitOperation.new
+    else
+        InvalidOptionOperation.new
     end
-    @library.list_books
   end
 end
