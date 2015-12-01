@@ -4,9 +4,9 @@ class Interpreter
     @library = library
   end
 
-  def interpret option, kernel = Kernel
+  def interpret option
     if option != "1"
-      kernel.exit(0)
+      return 'Select a valid option!'
     end
     @library.list_books
   end

@@ -10,6 +10,6 @@ class Library
 
   private
   def print_headers
-    "\nAvailable books are : \n" + "%-50s %-50s" % ["Name", "Author"] + "Year of Publication\n" + "-"*120
+    "Available books are : \n" + "%-50s %-50s" % ["Name", "Author"] + "Year of Publication\n" + "-"*120 + "\n"
   end
 end

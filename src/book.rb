@@ -7,6 +7,6 @@ class Book
   end
 
   def to_str
-    "\n%-50s %-50s" % [@name, @author] + @year_published.to_s
+    "%-50s %-50s" % [@name, @author] + @year_published.to_s + "\n"
   end
 end

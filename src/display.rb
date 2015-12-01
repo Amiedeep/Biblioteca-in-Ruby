@@ -6,7 +6,7 @@ class Display
   end
 
   def print_on_console
-    puts @message
+    puts "\n" + @message
   end
 
   def read_input

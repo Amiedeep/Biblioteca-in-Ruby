@@ -6,7 +6,7 @@ describe "Display" do
 
     it 'should print messgae on the console' do
       display = Display.new('some message')
-      expect(STDOUT).to receive("puts").with('some message')
+      expect(STDOUT).to receive("puts").with("\nsome message")
       display.print_on_console
     end
   end
