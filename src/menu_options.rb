@@ -5,6 +5,6 @@ class MenuOptions
   end
 
   def get_options
-      "Please select a option\n1: " + @menu_option + "\n"
+      "Please select a option\n1: " + @menu_option + "\nq: Quit\n"
   end
 end
