@@ -1,3 +1,5 @@
+require './src/syntax_sugar'
+
 class Library
 
   def initialize available_books
@@ -10,6 +12,6 @@ class Library
 
   private
   def print_headers
-    "Available books are : \n" + "%-50s %-50s" % ["Name", "Author"] + "Year of Publication\n" + "-"*120 + "\n"
+    SyntaxSugar::CONSTANTS::LIST_BOOKS_HEADERS
   end
 end

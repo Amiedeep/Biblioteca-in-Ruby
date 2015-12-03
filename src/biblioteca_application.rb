@@ -3,6 +3,7 @@ require_relative 'book'
 require_relative 'library'
 require_relative 'menu_options'
 require_relative 'interpreter'
+# require_relative 'syntax_sugar'
 
 class BibliotecaApplication
 
@@ -33,7 +34,7 @@ class BibliotecaApplication
   end
 
   def self.start
-    welcome_display = Display.new "Welcome to biblioteca"
+    welcome_display = Display.new SyntaxSugar::CONSTANTS::WELCOME_TO_BIBLIOTECA_MESSAGE
     available_books = [Book.new("the pragmattic programmer", "Me", 2010), Book.new("Clean code", "Me", 2011)]
     library = Library.new(available_books)
     menu_options = MenuOptions.new
