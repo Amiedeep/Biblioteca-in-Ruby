@@ -15,12 +15,16 @@ describe "Book" do
 
   describe "#name?" do
 
+    it 'should return false if the name passed is null' do
+      expect(book.name?(nil)).to be_falsey
+    end
+
     it 'should return true if the name passed is same as the name of book' do
       expect(book.name?('The passionate programmer')).to be_truthy
     end
 
-    it 'should return false if the name passed is null' do
-      expect(book.name?(nil)).to be_falsey
+    it 'should return false if the name passed is different from the name of book' do
+      expect(book.name?('Clean code')).to be_falsey
     end
   end
 end

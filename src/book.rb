@@ -12,6 +12,6 @@ class Book
 
   def name? that_name
     return false if that_name.nil?
-    true
+    @name.eql? that_name
   end
 end
