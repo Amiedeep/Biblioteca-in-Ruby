@@ -2,13 +2,21 @@ require './src/book'
 
 describe "Book" do
 
+  let(:book) { Book.new "The passionate programmer", "Amandeep Singh", 2010 }
+
   describe "#to_str" do
 
-    let(:book) { Book.new "The passionate programmer", "Amandeep Singh", 2010 }
-
     expected_string = "%-50s %-50s" % ["The passionate programmer", "Amandeep Singh"] + "2010\n"
+
     it 'should return formatted book in String' do
       expect(book.to_str).to eq(expected_string)
+    end
+  end
+
+  describe "#name?" do
+
+    it 'should return true of the name passed is same as the name of book' do
+      expect(book.name?('The passionate programmer')).to be_truthy
     end
   end
 end

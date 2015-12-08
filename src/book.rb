@@ -9,4 +9,8 @@ class Book
   def to_str
     "%-50s %-50s" % [@name, @author] + @year_published.to_s + "\n"
   end
+
+  def name? that_name
+    true
+  end
 end
