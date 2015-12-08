@@ -5,7 +5,6 @@ class MenuOptions
   end
 
   def get_options
-
     index = 0
     options = "Please select a option\n" +
         @menu_option.map { |option|

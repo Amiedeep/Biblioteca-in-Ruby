@@ -22,20 +22,20 @@ describe "Library" do
 
     it 'should not delete book from available_books if book name passed is nil' do
 
-      library.checkout_book nil
+      library.check_out_book nil
     end
 
     it 'should not delete book from available_books if book name does not matches' do
       expect(book1).to receive("name?").with('some random book').and_return(false)
       expect(book2).to receive("name?").with('some random book').and_return(false)
 
-      library.checkout_book 'some random book'
+      library.check_out_book 'some random book'
     end
 
     it 'should delete book from available_books if book name matches' do
       expect(book1).to receive("name?").with('some random book').and_return(true)
 
-      library.checkout_book 'some random book'
+      library.check_out_book 'some random book'
     end
   end
 end
