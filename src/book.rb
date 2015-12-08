@@ -11,6 +11,7 @@ class Book
   end
 
   def name? that_name
+    return false if that_name.nil?
     true
   end
 end
