@@ -1,5 +1,6 @@
 require './src/interpreter'
 require './src/operations/list_books_operation'
+require './src/operations/check_out_book_operation'
 require './src/operations/quit_operation'
 require './src/operations/invalid_option_operation'
 
@@ -18,6 +19,15 @@ describe "Interpreter" do
         operation = @interpreter.interpret('1')
 
         expect(operation.class).to eq(ListBooksOperation)
+      end
+    end
+
+    context 'when it gets 2 as parameter' do
+
+      it 'should return checkout book operation' do
+        operation = @interpreter.interpret('2')
+
+        expect(operation.class).to eq(CheckOutBookOperation)
       end
     end
 
