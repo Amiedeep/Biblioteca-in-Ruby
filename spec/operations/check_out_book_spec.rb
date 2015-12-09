@@ -10,7 +10,7 @@ describe 'CheckOutBook' do
       check_out_book_operation = CheckOutBook.new library
 
       expect(STDOUT).to receive('puts').with("\nEnter book name to checkout")
-      check_out_book_operation.stub(:gets).and_return('some book')
+      expect(check_out_book_operation).to receive("gets").and_return('some book')
       expect(library).to receive('check_out_book').with('some book')
 
       check_out_book_operation.execute
