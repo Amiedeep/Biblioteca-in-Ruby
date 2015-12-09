@@ -1,5 +1,5 @@
 require './src/display'
-class CheckOutBook
+class CheckOutBookOperation
 
   def initialize library
     @library = library
@@ -8,6 +8,6 @@ class CheckOutBook
   def execute
     Display.new('Enter book name to checkout').print_on_console
     book_name = gets
-    @library.check_out_book book_name
+    @library.check_out_book book_name.chomp
   end
 end
